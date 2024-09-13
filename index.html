@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>數字捷徑</title>
+    <link rel="icon" type="image/jpg" href="images/Azur_lane_icon.jpg">
+</head>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            text-align: center;
+        }
+        input {
+            padding: 10px;
+            width: 200px;
+            margin-right: 10px;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Pixiv數字開啟器</h1>
+    <input type="text" id="articleId" placeholder="把你從某處獲取的數字ID輸入到這" />
+    <button id="openButton">開啟</button>
+
+    <script>
+        // Base URL for the articles
+        const BASE_URL = "https://www.pixiv.net/artworks/";
+
+        document.getElementById("openButton").onclick = function() {
+            const articleId = document.getElementById("articleId").value.trim(); // Get user input
+
+            // Check if the input is empty
+            if (articleId !== "") {
+                const url = BASE_URL + articleId; // Construct the full URL
+                window.location.href = url; // Redirect to the constructed URL
+            } else {
+                alert("數字不能留空"); // Show an alert for empty input
+            }
+        };
+    </script>
+<br><br>
+<h2>推薦數字 :</h2>
+<h3>122370763</h4>
+<h3>116591705</h3>
+<h3>115640948</h3>
+<h3>121667797</h3>
+<h3>121743731</h3>
+<h3>122353763</h3>
+<h3>122227420</h3>
+<h3>120094105 (Halfly yabe)</h3>
+
+</body>
+</html>
