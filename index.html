@@ -20,11 +20,24 @@
             padding: 10px 15px;
             font-size: 16px;
         }
+        select {
+            padding: 10px;
+            margin-right: 10px;
+        }
     </style>
 </head>
 <body>
 
-    <h1>Pixiv數字開啟器</h1>
+    <h1>數字/ID開啟器</h1>
+
+    <label for="urlSelector" style="font-size:24px"><b>網站:</b></label>
+    <select id="urlSelector">
+        <option value="https://www.pixiv.net/artworks/">Pixiv (P站)</option>
+        <option value="https://www.youtube.com/watch?v=">YouTube</option>
+        <option value="https://www.instagram.com/reels/">IG reels</option>
+        <!--option value="https://www.nhentai.net/g/">(公共場所不宜)N站(不正常網站)</option-->
+    </select>
+
     <input type="text" id="articleId" placeholder="把你從某處獲取的數字ID輸入到這" />
     <button id="openButton">開啟</button>
 
@@ -34,18 +47,19 @@
 
         document.getElementById("openButton").onclick = function() {
             const articleId = document.getElementById("articleId").value.trim(); // Get user input
+            const baseUrl = document.getElementById("urlSelector").value; // Get selected base URL
 
             // Check if the input is empty
             if (articleId !== "") {
-                const url = BASE_URL + articleId; // Construct the full URL
-                window.location.href = url; // Redirect to the constructed URL
+                const url = baseUrl + articleId; // Construct the full URL
+                window.open(url);// Redirect to the constructed URL
             } else {
                 alert("數字不能留空"); // Show an alert for empty input
             }
         };
     </script>
 <br><br>
-<h2>推薦數字 :</h2>
+<h2>Pixiv推薦數字 :</h2>
 <h3>122370763</h4>
 <h3>116591705</h3>
 <h3>115640948</h3>
@@ -53,7 +67,8 @@
 <h3>121743731</h3>
 <h3>122353763</h3>
 <h3>122227420</h3>
-<h3>120094105 (Halfly yabe)</h3>
+<h3>120094105 (Halfly yabai)</h3>
+<h3>118341697 (Do not open)</h3>
 
 </body>
 </html>
