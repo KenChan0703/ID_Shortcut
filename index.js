@@ -5,6 +5,6 @@ const max = 130000000;
 let randomNum;
 
 RNGbutton.onclick = function(){
-    randomNum = Math.floor(Math.random() * max) + min;
+    randomNum = Math.floor(Math.random() * max-min) + min;
     RNGLabel.textContent = randomNum;
 }
